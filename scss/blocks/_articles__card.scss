@@ -1,0 +1,134 @@
+.articles__card{
+    display: block;
+    width: 570px;
+    height: auto;
+    border: 2px $border-card solid;
+    border-radius: 5px;
+    transition: background-color 0.2s ease-in-out;
+    text-decoration: none;
+
+    @include mobile{
+      width: 100%;
+      max-width: 290px;
+    }
+
+
+    &-img{
+      width: 170px;
+      height: 100%;
+      object-fit: cover;
+
+      @include mobile{
+        width: 86px;
+        height: 100%;
+      }
+    }
+    
+
+    &:hover {
+        background-color: #3172B9;
+    
+        & .articles__card-date,
+        & .articles__card-title,
+        & .articles__card-descr {
+          color: $white;
+        }
+      }
+
+
+
+
+
+      
+      &:focus{
+        outline: none;
+        background-color: #0E3B6C;
+
+        & .articles__card-date,
+        & .articles__card-title,
+        & .articles__card-descr {
+          color: $white;
+        }
+      }
+
+
+
+      &:active{
+        background-color: #71A7E2;
+
+        & .articles__card-date,
+        & .articles__card-title,
+        & .articles__card-descr {
+          color: $white;
+        }
+      }
+
+
+  
+    &-inner{
+        display: flex;
+        align-items: center;
+        height: 100%;
+
+    }
+
+
+    
+    &-content{
+        margin-left: 30px;
+
+
+        @include mobile{
+          padding-top: 30px;
+          padding-bottom: 30px;
+          margin-left: 15px;
+        }
+      
+
+    }
+
+    &-date{
+        margin-bottom: 5px;
+
+
+        font-size: 10px;
+        font-weight: $secondary-semibold;
+
+        line-height: 150%;
+        
+        color: $accent-color;
+        transition: color 0.3s ease-in ;
+
+    }
+
+
+    &-title{
+        margin-bottom: 25px;
+
+        font-size: 20px;
+        font-weight: $text-regular;
+
+        color: $main-color;
+        transition: color 0.3s ease-in ;
+        line-height: 130%;
+
+        @include mobile{
+          margin-bottom: 5px;
+        }
+
+
+    }
+
+    &-descr{
+
+        font-size: 14px;
+        font-weight: $text-regular;
+
+        color: $accent-color;
+        line-height: 150%;
+        transition: color 0.3s ease-in ;
+
+
+    }
+
+}

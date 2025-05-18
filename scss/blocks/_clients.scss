@@ -1,0 +1,25 @@
+.clients{
+    padding: 87px 0px 160px 0px;
+    border-bottom: 2px $border-color solid;
+
+    &__title{
+        margin-bottom: 42px;
+
+        font-size: 36px;
+        font-weight: $title-light;
+
+        color: $main-color;
+
+    }
+
+    &__wrapper{
+        display: grid;
+        grid-template-columns: repeat(3,1fr);
+        gap: 30px;
+
+        @include mobile{
+           grid-template-columns: 1fr;
+           gap: 15px;
+        }
+    }
+}

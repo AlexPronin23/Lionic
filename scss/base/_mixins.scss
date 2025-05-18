@@ -1,0 +1,100 @@
+
+@mixin website-button($border-radius,$padding){
+ 
+    border-radius: $border-radius;
+    padding: $padding;
+  
+}
+
+
+
+@mixin text{
+    font-size: 14px;
+    font-weight: $text-regular;
+    
+    color: $accent-color;
+    
+     line-height: 180%;
+}
+
+
+@mixin contacts-title{
+
+    
+     font-size: 17px;
+     font-weight: $secondary-semibold;
+                
+    color: $main-color;
+     line-height: 180%;
+     margin-bottom: 30px;
+
+}
+
+
+
+@mixin contacts-link{
+
+    font-size: 14px;
+    font-weight: $text-regular;
+
+    color: $accent-color;
+    line-height: 180%;
+    transition: color 0.2s ease-in-out;
+
+
+
+            &:hover{
+                color: #71A7E2;
+            }
+
+            &:focus{
+                outline: none;
+                color: #0E3B6C;
+            }
+
+
+            &::after{
+                content: '';
+                position: absolute;
+                top: -1px;
+                bottom: -5px;
+                left: -6px;
+                right: -6px;
+                border: 1px #71A7E2 solid;
+                opacity: 0;
+                height: 23px;
+            }
+
+            &:active::after{
+                opacity: 1;
+            }
+
+           
+        }
+
+        
+@mixin contacts-icons($url){
+    background-image: url(#{$url});;
+    background-repeat: no-repeat;
+}
+
+
+// Form
+
+@mixin form-input-select{
+    border: 1px solid $border-color;
+        border-radius: 50px;
+        padding: 16px 28px;
+        width: 251px;
+        height: 60px;
+        box-sizing: border-box;
+}
+
+@mixin mobile{
+
+    @media screen and (max-width:$mobileWidth){
+        @content;
+        
+    }
+
+}

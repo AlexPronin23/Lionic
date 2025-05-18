@@ -1,0 +1,44 @@
+
+@use './vars' as vars;
+
+.button{
+    background-color: #3172B9;
+    color: vars.$white;
+    font-weight: vars.$secondary-semibold;
+    cursor: pointer;
+    position: relative;
+    text-transform: uppercase;
+    border: none;
+    transition: background-color 0.2s ease, border 0.3s ease;
+
+
+    &::after {
+        content: '';
+        position: absolute;
+        top: -6px;
+        left: -6px;
+        right: -6px;
+        bottom: -6px;
+        border: 2px solid #3172B9;
+        // border-radius: calc(#{$border-radius} + 4px); // чуть больше, чем сама кнопка
+        opacity: 0;
+        transition: opacity 0.2s ease;
+        // pointer-events: none;
+      }
+
+    &:hover {
+      background-color: #71A7E2;
+    }
+  
+    &:active::after {
+        opacity: 1;
+      }
+  
+    &:focus {
+    outline: none;
+    background-color: #0E3B6C;
+    }
+
+
+    
+}

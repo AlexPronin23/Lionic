@@ -1,0 +1,177 @@
+
+@use '../base/mixins' as *;
+
+
+.header{
+padding: 36px 0;
+
+@include mobile{
+  border-bottom: 2px $border-color solid;
+  width: 100%;
+}
+
+
+&__inner{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    column-gap: 52px;
+
+    // @include mobile {
+    //   flex-direction: column;
+    //   align-items: flex-start;
+    //   padding: 20px 10px;
+    // }
+}
+
+&__logo-img{
+  
+  @include mobile{
+    width: 100px;
+    height: 45px;
+  }
+
+}
+
+&__nav {
+  margin-left: auto;
+  font-size: 15px;
+
+    &-menu {
+      display: flex;
+      align-items: center;
+      column-gap: 52px;
+
+    }
+
+    &-link{
+        position: relative;
+        color: $main-color;
+        font-weight: $secondary-semibold;
+       
+        transition: color 0.3s linear;
+
+        &::after {
+            content: '';
+            position: absolute;
+            left: 0;
+            bottom: -5px;
+            width: 0;
+            height: 2px;
+            background-color: #3474BA;
+            transition: width 0.3s ease;
+          }
+      
+          &:hover {
+            color: #71A7E2; // Цвет при ховере
+      
+          }
+
+          
+      
+          &:active{
+            color:#3474BA ;
+
+            &::after {
+              width: 100%;
+            }
+          }
+
+          &--active:active {
+            color: #3474BA;
+      
+            &::after {
+              width: 100%;
+            }
+          }
+
+     
+         
+
+}
+
+
+
+@include mobile{
+  display: none;
+}
+
+
+&.open {
+  position: fixed;  // Фиксируем меню
+  top: 0;
+  left: 0;
+  bottom: 0;
+  right: 0;
+  z-index: 1;
+  display: block;
+  background-color: white;
+}
+
+&.open &-menu {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  padding: 46px 30px;
+  row-gap: 20px;
+}
+
+&.open &-link {
+
+  font-size: 12px;
+}
+
+}
+  
+
+
+
+&__wrapper{
+  display: flex;
+  align-items: center;
+  gap: 5px;
+
+  @include mobile {
+    justify-content: flex-end;
+    width: 100%;
+  }
+}
+
+&__btn{
+    // @extend .button;
+    flex-shrink: 0;//не дает сжать кнопку 
+    @include website-button(1px,15px 36px);
+
+    @include mobile{
+      @include website-button(5px,10px 21px);
+      margin-left: 15px;
+    }
+
+
+  
+}
+
+.burger-btn{
+  cursor: pointer;
+  background: none;
+  border: none;
+  display: none;
+
+
+  @include mobile{
+    display: block;
+    width: 40px; 
+    height: 40px;
+    position: relative; // остаётся в потоке
+    z-index: 5; // будет выше, но не перекроет кнопку
+
+   
+  }
+
+ 
+
+}
+
+}
+
+

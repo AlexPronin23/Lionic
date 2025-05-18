@@ -1,0 +1,90 @@
+@use '../base/mixins' as *;
+
+.contacts{
+    padding: 87px 0;
+    border-bottom: 2px $border-color solid;
+
+    @include mobile{
+        padding: 60px 0;
+    }
+    
+
+
+
+
+    &__wrapper{
+        display: flex;
+        align-items: center;
+       gap: 200px ; 
+       
+       @include mobile{
+        display: block;
+        row-gap: 30px;
+        
+       }
+ }
+
+    &__title{
+        margin-bottom: 109px;
+
+        font-size: 36px;
+        font-weight: $title-light;
+
+        color: $main-color;
+
+        @include mobile{
+            margin-bottom: 15px;
+        }
+
+    }
+
+
+
+    &__item{
+
+        display: flex;
+        flex-direction: column;
+
+        @include mobile {
+            &:not(:last-child) {
+                margin-bottom: 30px;
+            }
+        }
+
+
+        &--visit{
+            @include contacts-icons('../../assets/icon/contacts/locate.svg');
+        }
+
+        &--call{
+            @include contacts-icons('../../assets/icon/contacts/phone.svg');
+        }
+
+        &--email{
+            @include contacts-icons('../../assets/icon/contacts/email.svg');
+        }
+
+
+        &-title{
+            padding-top: 40px;
+            @include contacts-title;
+        }
+
+        &-text{
+            @include text;
+            // width: 214px;
+
+        }
+
+        &-link{
+            position: relative;
+            @include contacts-link;
+
+        }
+
+    }
+
+
+
+ 
+}

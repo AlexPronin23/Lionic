@@ -1,0 +1,105 @@
+.clients__card{
+    width: 370px;
+    // height: 385px;
+    border: 2px $border-card solid;
+    border-radius: 5px;
+    overflow: hidden;
+
+
+    @include mobile{
+        max-width: 290px;
+        width: 100%;
+        // height: 100%;
+    }
+
+    &-content{
+       padding-top:51px ;
+       padding-left: 36px;
+       padding-right: 36px;
+
+       
+    }
+
+    &-comment{
+
+        font-size: 14px;
+        font-weight: $text-regular;
+        width: 281px;
+        color: $accent-color;
+        line-height: 180%;
+        padding-bottom: 32px;
+        margin-bottom: 62px;
+        position: relative; // обязательно!
+
+        @include mobile{
+            max-width: 255px;
+            width: 100%;
+            
+        }
+    
+    &::after {
+        content: '';
+        position: absolute;
+        left: 0;
+        bottom: 0;
+        width: 85%; // ширина линии
+        height: 2px; // толщина линии
+        background-color: $border-card; // цвет линии
+
+        @include mobile{
+            width: 90%;
+        }
+    }
+        
+  
+    }
+
+
+    &-bottom{
+        display: flex;
+        align-items: center;
+        gap: 15px;
+        margin-bottom: 32px;
+
+
+        img{
+            border-radius: 50px;
+            border: 2px #3172B9 solid;
+            object-fit: cover;
+        }
+
+
+        &-info{
+            display: flex;
+            flex-direction: column;
+
+            &-name{
+
+                font-size: 17px;
+                font-weight: $secondary-semibold;
+        
+                color: $main-color;
+        
+                line-height: 180%;
+        
+            }
+
+            &-job{
+
+                font-size: 14px;
+                font-weight: $text-regular;
+
+                color: $accent-color;
+
+                line-height: 180%;
+
+            }
+
+
+        }
+
+    }
+
+    
+    
+}

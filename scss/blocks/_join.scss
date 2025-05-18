@@ -1,0 +1,69 @@
+.join{
+    padding: 87px 0;
+    border-bottom: 2px $border-color solid;
+
+    @include mobile{
+        padding: 60px 0;
+    }
+
+
+
+    &__top{
+        text-align: center;
+        
+
+        @include mobile{
+            text-align: left;
+        }
+
+        &-title{
+
+            font-size: 36px;
+            font-weight: $title-light;
+
+            color: $main-color;
+            line-height: 130%;
+
+            margin-bottom: 22px;
+
+            @include mobile{
+                margin-bottom: 15px;
+            }
+        }
+
+        &-descr{
+
+            font-size: 16px;
+            font-weight: $text-regular;
+
+            color: $accent-color;
+
+            margin-bottom: 30px;
+
+            @include mobile{
+                display: none;
+            }
+
+
+            
+
+        }
+
+        &-mobile{
+            
+            font-size: 16px;
+            font-weight: $text-regular;
+
+            color: $accent-color;
+
+            margin-bottom: 30px;
+
+         display: none;
+
+          @include mobile{
+           display: block;
+          }
+
+        }
+    }
+}

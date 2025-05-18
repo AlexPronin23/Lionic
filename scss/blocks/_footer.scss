@@ -1,0 +1,201 @@
+.footer{
+    padding: 45px 0px;
+
+
+    &__inner{
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+
+        @include mobile{
+            display: flex;
+            flex-direction: column-reverse;
+           align-items: flex-start;
+        }
+    }
+
+    &__logo{
+        
+        display: flex;
+        align-items: center;
+
+        @include mobile{
+            margin-top: 31px;
+            flex-direction: column  ;
+            align-items: flex-start;
+        }
+
+
+        &-img{
+            width: 115px;
+            margin-right: 25px;
+            position: relative;
+
+
+
+
+            @include mobile{
+               width: 80px;
+               margin-bottom: 30px;
+
+
+              
+            }
+        }
+
+        &-copy{
+
+            font-size: 14px;
+            font-weight: $text-regular;
+
+            color: $accent-color;
+
+        }
+    }
+
+    &__right{
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+
+        @include mobile{
+            flex-direction: column;
+        }
+    }
+  
+
+    &__nav-menu{
+        display: flex;
+        // align-items: center;
+
+
+        @include mobile{
+           display: grid;
+           grid-template-columns: repeat(2,1fr);
+           row-gap: 15px;
+           margin-bottom: 30px;
+        }
+
+    }
+
+    &__nav-item{
+        margin-right: 28px;
+    }
+
+    &__nav-link{
+
+        font-size: 17px;
+        font-weight: $text-regular;
+
+        color: $accent-color;
+
+    }
+
+    // &__nav-item:last-child{
+    //     margin-right: 0px;
+    // }
+
+    &__social{
+        display: flex;
+
+      @include mobile{
+       justify-content: flex-start; // прижать к левому краю
+    width: 100%; // чтобы занять всю ширину контейнера
+    
+    }
+
+    
+
+        
+
+        &-link{
+
+            margin-right: 32px;
+
+            font-size: 15px;
+            font-weight: $secondary-semibold;
+
+            color: $accent-color;
+            position: relative;
+
+    
+
+            svg path {
+                transition: stroke 0.3s ease-in-out, fill 0.3s ease-in-out;
+              }
+
+        
+        &::after{
+            content: '';
+            position: absolute;
+            top: -9px;
+            left: -6px;
+            right: -6px;
+            bottom: -6px;
+            border: 2px solid #3172B9;
+            // border-radius: calc(#{$border-radius} + 4px); // чуть больше, чем сама кнопка
+            opacity: 0;
+            transition: opacity 0.2s ease;
+        }
+         
+            
+        &:hover{
+
+            svg path {
+                fill: #71A7E2;
+            }
+        }
+
+        &:focus{
+            svg path{
+                outline: none;
+                fill: #3172b9;   
+            }
+               
+           
+        }
+
+
+        &:active {
+            svg path {
+                fill: black; 
+            }
+        }
+
+        &:active::after{
+            opacity: 1;
+        }
+
+
+        
+
+        
+        &:last-child {
+
+            stroke: black;
+            
+            &:focus{
+                svg path{
+                    outline: none;
+                    fill: none;
+                   stroke: #3172B9;
+                }
+            }
+
+            &:active svg path {
+                stroke: black;
+                  
+              }
+
+              &.last__icon{
+                fill: transparent;
+               stroke: black;
+               transition:  fill 0.3s ease-in-out,stroke 0.3s ease-in-out;
+            }
+        }
+    
+    }
+
+}
+
+}

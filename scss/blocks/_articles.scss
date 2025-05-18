@@ -1,0 +1,35 @@
+.articles{
+    padding:87px 0  ;
+    border-bottom: 2px $border-color solid;
+
+    @include mobile{
+        padding: 60px 0;
+    }
+
+
+
+    &__title{
+        margin-bottom: 42px;
+
+        font-size: 36px;
+        font-weight: $title-light;
+
+        color: $main-color;
+
+    }
+
+
+    &__wrapper{
+        display: grid;
+        grid-template-columns: repeat(2,1fr);
+        gap: 30px 30px;
+
+
+        @include mobile{
+            grid-template-columns: 1fr;
+        }
+
+    }
+
+
+}

@@ -1,0 +1,94 @@
+@use '../base/mixins' as *;
+.hero{
+    padding: 136px;
+    background-image: url("/assets/img/hero/first-bg\ 1.jpg");
+    // border-top: 1px solid $white;
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center;
+
+
+    @include mobile{
+        background-image: none;
+        padding: 30px 15px;
+    }
+
+
+    &__inner{
+
+        @include mobile{
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+    }
+
+    &__title{
+        margin: 0;
+        color: $main-color;
+        font-weight: $title-light;
+        font-size: 40px;
+        margin-bottom: 26px;
+
+        @include mobile{
+            width: 290px;
+            line-height: 130%;
+        }
+    }
+
+    &__descr{
+        color: $accent-color;
+        font-size: 16px;
+        font-weight: $text-regular;
+        margin-bottom: 34px;
+
+        @include mobile{
+            width: 298px;
+            line-height: 155%;
+        }
+
+    }
+
+    &__btn{
+        // @extend .button;
+        @include website-button(5px,19px 58px);
+        margin-bottom: 33px;
+
+        @include mobile{
+            flex-shrink: 0;
+            width: 290px;
+            @include website-button(5px,19px 78px);
+            
+        }
+    }
+
+    &__security{
+
+        color: $accent-color;
+        font-weight: $text-regular;
+        font-size: 11px;
+        padding-left: 30px;       
+        gap: 1px;
+
+        position: relative;
+
+
+        &::before{
+            position: absolute;
+            content: '';
+            width: 17px;
+            height: 17px;
+            left: 0;
+            top: 50%;
+            transform: translateY(-50%);
+            background-image: url('/assets/icon/hero/Vector.svg');
+            background-repeat: no-repeat;
+        }
+
+        @include mobile {
+            // width: auto;
+          }
+
+    }
+
+}
